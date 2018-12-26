@@ -7,7 +7,8 @@ USER root
     #yum-config-manager --enable oso-rhui-rhel-server-releases && \
 #RUN yum-config-manager --disable rhel-7-server-nfv-rpms && \
 RUN INSTALL_PKGS="nss_wrapper java-1.8.0-openjdk" &&   \
-    subscription-manager repos --enable=* && \
+    yum repolist all && \
+    #subscription-manager repos --enable=* && \
    # yum-config-manager --enable rhel-server-rhscl-7-rpms && \    
     #yum-config-manager --disable epel >/dev/null || : && \
     
